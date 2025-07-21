@@ -78,7 +78,7 @@ for (let s = 0; s < slotCount; s++) {
       fadeOverlay.style.opacity = "1";
       fadeOverlay.style.pointerEvents = "auto";
       setTimeout(() => {
-        window.location.href = "GATO/index.html";
+        window.location.href = "Gato/index.html";
       }, 1000);
     }
 
