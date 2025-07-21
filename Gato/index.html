@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Testeo</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 3em;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    /* Fondo negro encima de todo durante la transición de entrada */
+    #entryOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease-in;
+      pointer-events: none;
+    }
+
+    #entryOverlay.hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="entryOverlay"></div>
+  Testeo
+
+  <script>
+    window.addEventListener("load", () => {
+      document.body.classList.add("fade-in");
+      const overlay = document.getElementById("entryOverlay");
+      overlay.classList.add("hidden");
+
+      // Opcional: quitarlo del DOM después del fade
+      setTimeout(() => {
+        overlay.remove();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

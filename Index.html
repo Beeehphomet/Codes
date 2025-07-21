@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Slots de Letras</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slot-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .slot {
+      text-align: center;
+    }
+
+    .arrow img {
+      width: 40px;
+      cursor: pointer;
+    }
+
+    .letter-slot {
+      width: 90px;
+      height: 90px;
+      overflow: hidden;
+      position: relative;
+      margin: 5px auto;
+    }
+
+    .letter-list {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .letter {
+      height: 90px;
+      line-height: 90px;
+    }
+
+    .letter img {
+      display: block;
+      margin: auto;
+      width: auto;
+      height: 90px;
+    }
+
+    /* Aquí está el bloque que habías colocado fuera por error */
+    #fadeOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="fadeOverlay"></div>
+  <div class="slot-container" id="slotContainer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
